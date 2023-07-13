@@ -1,0 +1,35 @@
+{% extends 'app1/dummy.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+<style>
+  .bg{
+    background: url('../static/images/food2.jpg') ;
+    background-size: cover;
+  }
+</style>
+<div class="bg" >
+    <div>
+      {% if user.username %}
+      <h1>WELCOME TO<span style="color:rgb(255, 0, 0); border:2px solid cyan; border-radius: 30% 0 30% 0; background-color: green; margin:5px;"> <i>V <i></span><span style="color: cyan;">food center</span> :{{user.username}}</h1>
+			{% else %} 
+      <h1>WELCOME TO<span style="color:rgb(255, 0, 0); border:2px solid cyan; border-radius: 30% 0 30% 0; background-color: green; margin:5px;"> <i>V <i></span><span style="color: cyan;">food center</span></h1>
+      {% endif %}
+      <p id="color"> <span>Indian Dinner Menu:</span>
+                Appetizer. Chicken Tikka Kebab. Khaman. Mint Cilantro Chutney.
+                <span>Drinks:</span> Shikanji Nimbu Pani.
+                <span>Main course:</span> Rajma. Palak Paneer. Chicken Tikka Masala.
+                <span> Rice dish:</span> Jeera Rice.
+                <span> Bread:</span> Naan.
+                <span> Raita:</span> Boondi raita.
+                <span> Dessert:</span> Kheer and/or Gulab Jamun.
+        </p>
+         
+		</div>
+    
+	</div>
+</div>
+{% endblock %}

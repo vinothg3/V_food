@@ -1,0 +1,22 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+<span class="crd" style="display: flex; flex-direction: row; flex-wrap: wrap; padding:0px">
+    
+    {% for x in listpro %}
+    <div class="card-deck " id="card">
+        <div class="card" >
+          <img class="card-img-top" src="{{x.product_image.url}}" alt="Card image cap" style="width:auto; height:200px">
+          <div class="card-body"> <a href="{{x.pk}}" class="text-decoration-none">
+            <h5 class="card-title">{{x.productname}}</h5>
+            <p class="card-text">RS.{{x.product_price}}</p>
+        </a>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+</span>
+{% endblock %}

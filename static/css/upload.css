@@ -1,0 +1,52 @@
+.upload
+{
+    background-color: orange;
+    display: inline-block;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 2px solid green;
+
+}
+.upload>h5
+{
+    color: green;
+    padding: 10px;
+    border: 2px solid cyan;
+    border-radius: 20px 0px 20px 0px;
+    background-color: black;
+}
+.upload>form
+{
+    text-align: start;
+    padding: 10px 5px ;
+}
+.upload>form>.in
+{
+    background-color: antiquewhite;
+    text-align: start;
+    padding: 5px;
+    border-radius: 10px;
+
+}
+.upload>form>.in:hover
+{
+    background-color:black;
+    color:green ;
+    border: 2px solid cyan;
+}
+.upload>form>.btn
+{
+    background-color:black;
+    margin-left: 35%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid cyan;
+    border-radius: 10px 0px 10px 0px;
+    color: green;
+}
+.upload>form>.btn:hover
+{
+    background-color:cyan;
+    color: black;
+    border: 2px solid green;
+}

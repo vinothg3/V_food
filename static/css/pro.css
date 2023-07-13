@@ -1,0 +1,128 @@
+#register
+{
+    position: absolute;
+    display: flex;
+    list-style-type: none;
+    right: 20px;
+    top: 28px;
+
+}
+#register>li>a
+{
+    background-color: orange;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+#register>li>a:hover
+{
+    background-color: gray;
+    border: 2px solid orange;
+}
+.profile 
+{
+    padding: 2px;
+}
+.pro_ul
+{
+    display: flex;
+    list-style-type: none;
+    margin-top: -13px;
+    position: absolute;
+    right: 0px;
+    top: 21%;
+    align-items: center
+        
+}
+.pro_ul>li>a>span
+{
+    background-color: rgb(18, 49, 23);
+    border: 3px solid orange;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    color:white;
+
+}
+.pro_ul>li>a>span:hover
+{
+    background-color:rgb(132, 238, 118);
+    color:black;
+    border: 2px black solid;
+}
+.pro_ul>.profile_btn>a>img
+{
+    border: 2px solid orange;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    padding: 2px;
+}
+
+.profile_data
+{
+    position: absolute;
+    top: 100px;
+    width: 240px;
+    right: 10px;
+    background-color:orange;
+    border-radius: 10px;
+    padding: 1%;
+    z-index: 3;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    max-height: 0px;
+    display: none;
+    box-shadow: var(--shadow);
+    transition: max-height 0.5s;
+    list-style-type: none;
+    transition: max-height 1s;
+    list-style-type: none;
+    border: 3px solid white;
+    border-radius: 20px 0px 20px 20px;
+    overflow: hidden;
+
+}
+.profile_data>li>a
+{
+    background-color: rgb(48, 54, 54);
+    
+    padding: 10px 10px 10px 50px;
+    color: aqua;
+    display: block;
+    border-radius: 20px ;
+    margin: 3px;
+    align-content: center;
+}
+
+.profile_data>li>a:hover
+{
+    text-decoration:none ;
+    
+    background-color:rgb(121, 240, 121);
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.profile_data.active
+{
+    max-height: 500px;
+    display: block;
+}
+
+.search
+{
+    background-color: rgb(18, 49, 23);
+    border: 3px solid orange;
+    padding: 7px 10px 7px 20px;
+    border-radius: 20px;
+
+}
+.search:hover
+{
+    background-color:rgb(132, 238, 118);
+    color:black;
+    border: 2px black solid;
+}

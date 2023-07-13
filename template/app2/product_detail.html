@@ -1,0 +1,41 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <div class="upload_address">
+            <h5>Detail</h5>
+            <form action="{% url 'productorder' %}" method="POST">
+                {% csrf_token %}
+                <table id="product_detail">
+                    <tr>
+                        <th>
+                            <img src="{{prodetail.product_image.url}}" alt="" style="width: 300px; height:300px"><br>
+                        </th>
+                        <th class="p-5">
+                            <h3>Name :{{prodetail.productname}}</h3>
+                            <h5>Type :{{prodetail.product_type}}</h5>
+                            <h5>Price:{{prodetail.product_price}}</h5>
+                            <h5>description:{{prodetail.product_descrition}}</h5>
+                            <br>
+                            <br>
+                            <input type="hidden" value="{{prodetail.product_id}}" name="id" class="pt-2">
+                            <input type="number" name="number" id="" placeholder="Enter the how many" style="height:42px; "> 
+                            <input type="submit" value="Order" class="btn btn-danger p-2 ml-5 " style="text-align:center" >
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+                
+                
+                <br>
+                <br>
+    </center>
+
+
+
+    {% endblock %}

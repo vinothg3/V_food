@@ -1,0 +1,85 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div>
+    <center>
+
+        <div> 
+            {% for x in del.username.product.all %}
+                {% if del.product_id == x %}
+                <div class="card mb-1 mt-3" style="max-width: 580px; ">
+                    <div class="row g-0">
+                      <div class="col-md-6">
+                        <img src="{{x.product_image.url}}" class="img-fluid rounded-start" alt="..." style="width: 400px; height:240px">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">{{x.product_type}}</h5>
+                          <h6 class="card-title">{{x.productname}}</h6>
+                          <p class="card-text">{{del.username.pro.Address}}</p>
+                         
+                          
+                          <p class="card-text"><small class="text-muted">{{del.dateandtime}}</small></p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                        
+                {% endif %}
+              
+            
+            
+            {% endfor %}
+           <div class="ml-5">
+                {% if del.product_request %}
+                    {% if del.product_accepted %}
+                        {% if del.riched %}
+                            {% if del.taken %}
+                                <ul class="track" id="step8" >
+                                    <li class="step1"><span>Donform</span></li>
+                                    <li class="step2"><span>Order</span></li>
+                                    <li class="step3"><span>Delivery</span></li>
+                                    <li class="step4"><span>Reched</span></li>
+                                </ul>
+                            {% else %}
+                                <ul class="track" id="step7" >
+                                    <li class="step1"><span>Conform</span></li>
+                                    <li class="step2"><span>Order</span></li>
+                                    <li class="step3"><span>Delivery</span></li>
+                                    <li class="step4"><span>Reched</span></li>
+                                </ul>
+                            {% endif %}
+                        {% else %}
+                            <ul class="track" id="step6" >
+                                <li class="step1"><span>Conform</span></li>
+                                <li class="step2"><span>Order</span></li>
+                                <li class="step3"><span>Delivery</span></li>
+                                <li class="step4"><span>Reched</span></li>
+                            </ul>
+                        {% endif %}
+                    {% else %}
+                        <ul class="track" id="step5" >
+                            <li class="step1"><span>Conform</span></li>
+                            <li class="step2"><span>Order</span></li>
+                            <li class="step3"><span>Delivery</span></li>
+                            <li class="step4"><span>Riched</span></li>
+                        </ul>
+                    {% endif %}
+                    
+                {% else %}
+                    <ul class="track" id="step4" >
+                        <li class="step1"><span><span>Conform</span></span></li>
+                        <li class="step2"><span><span>Order</span></span></li>
+                        <li class="step3"><span>Delivery</span></li>
+                        <li class="step4"><span>Reched</span></li>
+                    </ul>
+                {% endif %}
+           </div>
+        </div>
+    </center>
+</div>
+{% endblock %}

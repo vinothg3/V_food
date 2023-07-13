@@ -1,0 +1,23 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div class="upload">
+        <h5>Upload the Product</h5>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="in" type="text" name="product_type" placeholder="Product Type"><br><br>
+            <input class="in" type="file" name="image" id="" placeholder="Inside Image"><br><br>
+            <input class="in" type="text" name="productname" id="" placeholder="Product Name"><br><br>
+            <input class="in" type="number" name="price" id="" placeholder=" Enter Price"><br><br>
+            <textarea class="in" name="description" id="" cols="30" rows="10" placeholder='Write sample product description'></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+</center>
+{% endblock %}

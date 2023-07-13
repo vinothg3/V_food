@@ -1,0 +1,53 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>customer details</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <style>
+       
+    </style>
+    <div>
+        <h4 style="background-color:black; border:2px solid orange; padding:10px; display:inline-block; border-radius:50px; color:white; margin:10px;">Customer Details</h4>
+            {% for i in ou %}
+                {% for x in prf %}
+                    {% if x.product_id == i %}
+                    <table id="customer">
+                        <tr>
+                            <th>
+                                <img src="{{i.product_image.url}}" alt="" style="width:250px; height:260px; border-radius:10px; padding:5px 4px 4px 4px  ">
+                            </th>
+                            <th class="p-4">
+                                <h6>Username : {{x.ordercustomer}}</h6> 
+                                <h6>Type     : {{i.product_type}}</h6>
+                                <h6>Name     : {{i.productname}} </h6>
+                                <h6>Price    : {{i.product_price}}</h6>
+                                <h6>Many     : {{x.how_many}}</h6>
+                                <h6>Total Amount : {{x.total}}</h6>
+                                <h6>Date & Time  : {{x.dateandtime}}</h6>
+                                {% if x.orderconform %}
+                                    
+                                {% else %}
+                                <form action="{% url 'conformorder' %}" method="POST" >
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{x.prime_pk}}" name="pri">
+                                    <input type="hidden" value="{{x.pk}}" name="pki">
+                                
+                                    <input type="hidden" value="True" name="conform" id="conform">
+                                    <input type="submit" value="Conform" class="btn btn-danger" onclick="">
+                                </form>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </table>
+                    <hr>
+                    {% endif %} 
+                {% endfor %}
+            {% endfor %}
+       
+    </div>
+    
+</center>
+
+{% endblock %}

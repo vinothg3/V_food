@@ -1,0 +1,35 @@
+
+{% extends 'app1/dummy.html' %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+
+    <div class="profile_detail">
+      <table > 
+        <tr>
+          {% if user.pro.profile_pic %}
+          <th rowspan="3" class="p-1"><a href="{% url 'profileupdate' %}" ><img src="{{pro.profile_pic.url}}" class="img-fluid rounded-start pl-1" alt="..." style="width: 200px; height:200px; border-radius:20px;"></a>
+          </th>
+          
+          {% else %}
+          <th rowspan="3" class="p-1"><a href="{% url 'profileupdate' %}" ><img src="{% static 'images//Default_pfp.svg.png' %}" class="img-fluid rounded-start" alt="..." style="width: 200px; height:200px"></a></th>
+          
+          {% endif %}
+          <th class="p-5"><p style="color: black; font-size:20px">Name :  {{user.username}}</p>
+              <p style="color: black;">Email : {{user.email}}</p>
+              <p><a href="{% url 'update_description' %}" style="color: black;">  description : </a>{{user.pro.description}}</p>
+              <p><a href="{% url 'update_address' %}" style="color: black;">Address : </a> {{user.pro.Address}}</address></p>
+              <p style="color: black;">Pincode :  {{user.pro.pincode}}</p>
+               
+          </th>
+        </tr>
+      
+      </table>
+    </div>
+      
+</center>
+{% endblock %}

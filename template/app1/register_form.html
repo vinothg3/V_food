@@ -1,0 +1,25 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div class="reg" >
+        <a href="{% url 'home' %}">X</a>
+        <h3 class="bg-primary">Sinup</h3>
+        <form  method="POST">
+            {% csrf_token %}
+            {{user.as_p}}
+           <input type="submit" value="submit" id="regbutton">
+        </form>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }} bg-danger mt-3"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</center>
+{% endblock %}

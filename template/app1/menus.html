@@ -1,0 +1,63 @@
+{% extends 'app1/dummy.html' %}
+
+{% block title %}
+<title>Menus</title>
+{% endblock %}
+{% block body_block %}
+<style>
+    #menus_detail
+    {
+        background-color: white ;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 5%;
+
+    }
+    #menus_detail>h3
+    {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    #mtb
+    {
+        background-color: orange;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    #mtb>a>h4
+    {
+        background-color: aqua;
+        color: black;
+        padding: 3px 10px;
+        text-decoration: none;
+        border-radius: 20px;
+    }
+    #mtb>a>h4:hover
+    {
+        background-color: black;
+        color: white;
+        padding: 5px 12px;
+        text-decoration: none;
+    }
+
+</style>
+   
+    <center>
+        
+        <div class="pt-5" id="menus_detail">
+            <h3>Menus </h3>
+            <table >
+                <tr>
+                    <th id="mtb">{% for x in l %}
+                        <a href="{{x}}"><h4>{{x}}</h4></a>
+                       {% endfor %}</th>
+                </tr> 
+            </table>
+        </div>
+    </center>
+    
+
+{% endblock %}

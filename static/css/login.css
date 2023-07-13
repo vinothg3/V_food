@@ -1,0 +1,102 @@
+.reg
+{
+    background-color: orange;
+    display: inline-block;
+    padding: 40px;
+    margin-top: 50px;
+    position: relative;
+    border-radius: 20px;
+}
+.reg>a
+{
+    position:absolute ;
+    right: 3%;
+    top: 2%;
+    border: 1px solid green;
+    padding: 1px 4px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.reg>a:hover
+{
+    text-decoration: none;
+    background-color: red;
+}
+#regbutton
+{
+    background-color:green;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#regbutton:hover
+{
+    background-color: orange;
+    border-color: green;
+}
+.reg>h3
+{
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.reg>form>p
+{
+
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+   
+
+}
+
+
+
+
+
+
+.login
+{
+    background-color: orange;
+    display: inline-block;
+    padding: 40px;
+    margin-top: 50px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.login>a
+{
+    position:absolute ;
+    right: 5%;
+    top: 2%;
+    border: 1px solid green;
+    padding: 1px 4px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.login>a:hover
+{
+    text-decoration: none;
+    background-color: red;
+}
+#button
+{
+    background-color:green;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#button:hover
+{
+    background-color: orange;
+    border-color: green;
+}
+.login>h3
+{
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}

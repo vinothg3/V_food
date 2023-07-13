@@ -1,0 +1,32 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>user product list</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div class="userproductlist">
+        <h5>List Of Products </h5>
+        {% for x in up %}
+        <table >
+            <tr >
+                <th id="upl">
+                    <img src="{{x.product_image.url}}" alt="" style="width: 250px; height:250px; border-radius:20px">
+                </th>
+                <th id="upl3">
+                    <h2><span id="s1">Product Id  :    </span>{{x.product_id}}</h2>
+                    <h3><span id="s1">Product Type:    </span>{{x.product_type}}</h3>
+                    <h4><span id="s1">Product Name:    </span>{{x.productname}}</h4>
+                    <h5><span id="s1">Product Price  :   </span>{{x.product_price}} </h5>
+                    <p><span id="s1">Product_Description :</span>{{x.product_descrition}} </p>
+                </th>
+            </tr>
+        </table>
+        <hr>
+        {% endfor %}
+    
+
+    </div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+body
+{
+    position: relative;
+}
+.crd
+{
+    position:absolute;
+    color: rgb(255, 0, 195);
+}
+#card
+{
+    width: 270px;
+    padding: 10px;
+    display: block;
+
+}
+#card:hover
+{
+    padding: 5px;
+}
+
+#orderdetail
+{
+    background-color:orange;
+    border-radius: 10px;
+}
+#orderdetail:hover
+{
+    background-color:darkgrey;
+}
+#customer
+{
+    background-color:cyan;
+    border-radius: 10px;
+}
+#product_detail>h3
+{
+    position: relative;
+    top: 500px;
+    background-color: aqua;
+}

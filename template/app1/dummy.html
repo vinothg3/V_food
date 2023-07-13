@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nvd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/delivery1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile_d.css' %}">
+    <link rel="stylesheet" href="{% static 'css/userproductlist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/crd.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'MDB/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'MDB/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts icons/fa/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts icons/fa/css/all.min.css' %}">
+
+
+    <style>
+       .nav_active
+       {
+           position: absolute;
+           top: 90px;
+           right: 5%;
+           border: 3px solid white;
+            border-radius: 0px 20px 20px 20px ;
+           list-style-type: none;
+           padding: 10px;
+           background-color:orange;
+           display: none;
+           box-shadow: var(--shadow);
+           transition: max-height 0.5s; 
+           z-index: 3;
+       }
+
+       .show
+       {
+        display: block;
+       }
+       .nav_active>li>a
+       {
+           background-color: black;
+           border: 2px green solid;
+           margin: 2px;
+           border-radius: 20px;
+       }
+       .nav_active>li>a:hover
+       {
+           background-color:greenyellow;
+           border: 2px black solid;
+           margin: 2px;
+           color: black;
+           border-radius: 20px;
+       }
+       .font
+       {
+           position: absolute;
+           right: 110%;
+           top: 10px;
+           font-size: 40px;
+           color: orange;
+           display: none;
+       }
+       @media only screen and (max-width:1261px)
+       {
+           .ul_nav>li
+           {
+               display: none;
+           }
+          .font
+          {
+           display: block;
+           
+          }
+        .pro_ul
+        {
+            top: 25%;
+        }
+       }
+       @media only screen and (max-width:750px)
+       {
+        body
+        {
+            font-size: 14px;
+        }
+       }
+    </style>
+   
+    <nav class="nav">
+        <div class="d-flex flex-row justify-content-end">
+            <div><h3><span>V</span><i>food center</i></h3></div>
+            
+                
+                <ul class="d-flex flex-row justify-content-center  ul_nav" >
+                    <li><form action="{% url 'product_list' %}" method="POST"> {% csrf_token %} <input type="search" name="search" id="search" class="search" placeholder="search"></form></li>
+                    <li><a href="{% url 'home' %}" class="nav-link ">Home</a></li>
+                    <li><a href="{% url 'orderdetails' %}"  class="nav-link ">Orderdetails</a></li>
+                    <li><a href="{% url 'menus' %}"  class="nav-link r">Menus</a></li>
+                    <li><a href="{% url 'customerdetail' %}"  class="nav-link ">Customerorder</a></li>   
+                    <li><a href="{% url 'uploadproduct' %}"  class="nav-link ">Uploadproduct</a></li>       
+                </ul>
+        </div>
+        
+                {% if user.is_authenticated %}
+                <div class="profile">
+                   
+                    <div  >
+                        <ul class="pro_ul">
+                            <div class="font" onclick="fontes()"><i class="fa-solid fa-bars"></i></div>
+                            <li><a href="{% url 'logout_form' %}" class="nav-link" ><span>Logout</span></a></li>
+                        {% if user.pro.profile_pic %}
+                            <li class="profile_btn" onclick="toggle()"><a  class="nav-link"  ><img src="{{user.pro.profile_pic.url}}" alt="" class="img-fluid rounded-start mt-1"  style="width: 60px; height:60px; border-radius:50px "></a></li>
+                        {% else %}
+                            <li class="profile_btn" onclick="toggle()"><a  class="nav-link" ><img src="{% static 'images/Default_pfp.svg.png' %}" alt="" class="img-fluid rounded-start"  style="width: 60px; height:60px; border-radius:50px "></a></li>
+    
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                    <ul id="register">
+                        <li> <a href="{% url 'register_form' %}"   class=" btn nav-link">Register</a> </li>
+                        <li><a href="{% url 'log_form' %}"  class="btn nav-link" >Login</a></li>
+                    </ul>
+                {% endif %}
+        <div>
+            <div>
+                <ul class="nav_active" id="mydropdown" >
+                    <li><form action="{% url 'product_list' %}" method="POST"> {% csrf_token %} <input type="search" name="search" id="search" class="search" placeholder="search"></form></li>
+                    <li><a href="{% url 'home' %}" class="nav-link btn-danger btn">Home</a></li>
+                    <li><a href="{% url 'orderdetails' %}"  class="nav-link btn btn-danger">orderdetails</a></li>
+                    <li><a href="{% url 'menus' %}"  class="nav-link btn btn-danger">Menus</a></li>
+                    <li><a href="{% url 'customerdetail' %}"  class="nav-link btn btn-danger">customerorder</a></li>   
+                    <li><a href="{% url 'uploadproduct' %}"  class="nav-link btn btn-danger">uploadproduct</a></li>       
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+   
+</head>
+<body class="bg-success">
+    <ul class="profile_data">
+        <li><a href="{% url 'profile_data' %}">View Profile</a></li>
+        <li><a href="{% url 'profileupdate' %}">Upload pofile</a></li>
+        <li><a href="{% url 'update_description' %}">Upload description</a></li>
+        <li><a href="{% url 'update_address' %}">Upload Addresss</a></li>
+        <li><a href="{% url 'userproductlist' %}">Listproduct</a></li>
+    </ul>
+
+<script>
+    let profileDropdownList = document.querySelector(".profile_data");
+    let btn = document.querySelector(".profile_btn");
+
+    let classList = profileDropdownList.classList;
+
+    const toggle = () => classList.toggle("active");
+
+    window.addEventListener("click", function (e) {
+    if (!btn.contains(e.target)) classList.remove("active");
+    });
+
+
+    function fontes() {
+        document.getElementById("mydropdown").classList.toggle("show");
+      }
+    
+</script>
+
+
+    
+    
+
+{% block body_block %}
+{% endblock %}
+
+
+</body>
+</html>

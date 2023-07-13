@@ -1,0 +1,39 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div>
+        <h1>YOUR ORDER DETAILS</h1>
+        
+        {% for x in OR %}
+            {% for i in l %}
+                {% if x.product_id == i %}
+                        <table>
+                            <tr>
+                                <th class="pl-5"><img src="{{i.product_image.url}}" alt="" style="width:200px; height:200px"></th>
+                                <th class="p-5">
+                                    <h3>Name  : {{i.productname}}</h3>
+                                    <h4>Type  : {{i.product_type}}</h4>
+                                    <h5>price :{{i.product_price}}</h5>
+                                    <h5>Many  :{{x.how_many}}</h5>
+                                    <h5>Total Amount :{{x.total}}</h5>
+                                    <h5>description  : {{i.product_descrition}}</h5>
+                                </th>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                {% endif %}      
+            {% endfor %}
+         {% endfor %}
+         <hr>
+         {% for i in l %}
+            {{i.username}}
+            {{i.product_price}}
+         {% endfor %}
+    </div>
+</center>
+{% endblock %}

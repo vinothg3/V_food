@@ -1,0 +1,39 @@
+.userproductlist
+{
+    background-color: aqua;
+    margin: 10px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+}
+.userproductlist>h5
+{
+    background-color: black;
+    padding: 10px;
+    color: aqua;
+    border-radius: 20px;
+    margin: 10px
+}
+.userproductlist>table
+{
+    background-color:orange ;
+    border-radius: 20px;
+    width: 100%;
+}
+#upl
+{
+    margin: 5px;
+    padding: 10px;
+    color: black;
+    width: 100px;
+}
+#upl3
+{
+    margin-left: 5px;
+}
+#s1
+{
+    color: white;
+    padding: 5px;
+    
+}

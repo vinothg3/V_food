@@ -1,0 +1,19 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>upload_address</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <div class="upload_address">
+            <h5>write description</h5>
+            <form action="" method="POST">
+            
+                {% csrf_token %}
+               <textarea name="description" id="" cols="60" rows="5" placeholder="write your headline"></textarea>
+               <br>
+               <input type="submit" value="submit" id="uploadaddress_btn" >
+            </form>
+        </div>
+    </center>
+{% endblock %}

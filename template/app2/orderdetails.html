@@ -1,0 +1,62 @@
+{% extends 'app1/dummy.html' %}
+{% block title %}
+<title>orderde6tails</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div>
+        <h4 style="background-color:black; border:2px solid orange; padding:10px; display:inline-block; border-radius:50px; color:white; margin:10px;">Order Details</h4>
+        {% if prod %}
+        {% for x in prod %}
+            {% for i in prf %}
+            
+                {% if x.product_id == i %}
+                <table id="orderdetail">
+                    <tr >
+                        <th>
+                            <img src="{{i.product_image.url}}" alt="" style="width:230px; height:230px; border-radius:10px;">
+                        </th>
+                        <th class="pl-4 pr-4">
+                            {% if x.cancel %}
+                                <a class="text-success">Cancelled</a>
+                            {% else %}
+                                {% if x.reched %}
+                                <a href="{{x.pk}}" class="text-success">Deliveryed</a>
+                                {% else %}
+
+                                <a href="{{x.pk}}" class="text-success">Deliverying</a>
+                                {% endif %}
+                            {% endif %}
+                          
+                            <h6>Type  : {{i.product_type}}</h6>
+                            <h6>Name  : {{i.productname}} </h6>
+                            <h6>Price : {{i.product_price}}</h6>
+                            <h6>Many: {{x.how_many}}</h6>
+                            <h6>Total Amount : {{x.total}}</h6>
+                            <h6>Date & Time : {{x.dateandtime}}</h6>
+                            {% if not x.cancel %}
+                            <form action="{% url 'ordercancel' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" value="True" name="cancel">
+                                <input type="hidden" value="{{x.pk}}" name="prk">
+                                <input type="submit" value="cancel" class="btn btn-success">
+                            </form>
+                            {% endif %}
+                            
+                        </th>
+                    </tr>
+                    <hr>
+                </table>
+                    
+                {% endif %}
+            {% endfor %}
+        {% endfor %} 
+        {% else %}
+        <h6>No Order <a href="{% url 'home' %}" style="color: Black;">Go to order</a></h6>
+        {% endif %} 
+            
+       
+    </div>
+</center>
+{% endblock %}

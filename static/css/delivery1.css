@@ -1,0 +1,152 @@
+.track
+{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+gap: 1em;;
+position: relative;
+text-align: center;
+top: 90px;
+list-style-type: none;
+
+}
+
+.track>li
+{
+    width: 20%;
+    position: relative;
+}
+.track>li>span
+{
+    position: relative;
+    top: 50px;
+    left: -100px;
+    color: yellow;
+}
+.track>li::before
+{
+
+     content: '\2713';
+     position: absolute;
+     display: flex;
+     justify-content: center;
+     width: 50px;
+    align-items: center ;
+    font-size: 2em;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 11111;
+    background-color:orange;
+    color: green;
+}
+.track::before
+{
+    content: '';
+    position: absolute;
+    top: 20px;
+    height: 10px;
+    margin-left: 35px;
+    z-index: 1;
+}
+.track::after
+{
+    content: "";
+    position: absolute;
+    top:20px ;
+    height: 10px;
+}
+#step8::before
+{
+    width: 75%;
+    background-color:orange;
+}
+
+#step7>li:last-child::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step7::before
+{
+    width: 55%;
+    background-color:orange;
+}
+#step7::after
+{
+    width: 80%;
+    background-color: aliceblue;
+}
+
+#step6>li:nth-child(3)::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step6>li:nth-child(4)::before
+{
+    background-color:aliceblue ;
+    color: black;
+}
+#step6::before
+{
+    width: 30%;
+    background-color:orange;
+}
+#step6::after
+{
+    width: 80%;
+    background-color: aliceblue;
+}
+#step5>li:nth-child(2)::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step5>li:nth-child(3)::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step5>li:nth-child(4)::before
+{
+    background-color:aliceblue ;
+    color: black;
+}
+#step5::before
+{
+    width: 5%;
+    background-color:orange;
+}
+#step5::after
+{
+    width: 80%;
+    background-color: aliceblue;
+}
+
+#step4>li:nth-child(1)::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step4>li:nth-child(2)::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step4>li:nth-child(3)::before
+{
+    background-color: aliceblue;
+    color: black;
+}
+#step4>li:nth-child(4)::before
+{
+    background-color:aliceblue ;
+    color: black;
+}
+
+#step4::after
+{
+    width: 80%;
+    background-color: aliceblue;
+}

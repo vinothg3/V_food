@@ -1,0 +1,36 @@
+.bg
+{
+	background-color:orange;
+}
+.bg>div
+{
+	background-color:rgba(0, 0, 0,0.4);
+	height:100vh;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+}
+.bg>div>h1
+{
+	color: rgba(255, 100, 255, 0.7);
+	font-family:"comic sans ms",sans-serif;
+	margin: 0px 0px 20px 0px;
+
+}
+#color
+{
+	color: yellow;
+	font-size:18px;
+}
+#color>span
+{
+	color: rgb(6, 126, 206);
+	text-decoration-line: underline ;
+}
+.color>span:hover
+{
+	color: black;
+}
+
